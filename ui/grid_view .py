@@ -105,7 +105,6 @@ class GridView(QWidget):
         cell_w, cell_h = self._metrics()
         pad = 3.0
 
-        # Background gradient
         grad = QLinearGradient(0, 0, w, h)
         grad.setColorAt(0.0, QColor(70, 20, 100))
         grad.setColorAt(1.0, QColor(40, 10, 60))
@@ -122,7 +121,6 @@ class GridView(QWidget):
 
         board = self.game_logic.board.grid
 
-        # Grid
         for r in range(ROWS + 1):
             for c in range(COLS + 1):
                 x, y = c * cell_w, r * cell_h
@@ -155,7 +153,6 @@ class GridView(QWidget):
                         p.drawLine(rect.topLeft(), rect.topRight())
                         p.drawLine(rect.topLeft(), rect.bottomLeft())
 
-                # Border
                 p.setBrush(Qt.BrushStyle.NoBrush)
                 p.setPen(QPen(GOLD_LINE, 2.5))
                 p.drawRect(rect)
@@ -171,9 +168,7 @@ class GridView(QWidget):
                     pm = self._row_logos[d_r]
                     if pm:
                         self._draw_logo(p, pm, rect)
-
-   
-
+                        
     def _draw_logo(self, p, pm, rect):
         size = min(rect.width(), rect.height()) * 0.85
         scaled = pm.scaled(
