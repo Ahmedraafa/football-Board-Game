@@ -1,0 +1,8 @@
+ROWS = 6
+COLS = 7
+
+PLAYER_1 = 1
+PLAYER_2 = 2
+EMPTY = 0
+
+WIN_CONDITION = 4
