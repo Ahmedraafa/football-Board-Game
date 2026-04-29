@@ -8,14 +8,12 @@ from PyQt6.QtCore import Qt, QRectF
 
 from core.rules import ROWS, COLS, PLAYER_1, PLAYER_2, EMPTY
 
-# --- Colors ---
 PURPLE_BG    = QColor(120, 50, 200)
 GOLD_LINE    = QColor(212, 175, 55)
 CELL_WHITE   = QColor(255, 255, 255)
 PLAYER1_FILL = QColor(160, 170, 220, 180)
 PLAYER2_FILL = QColor(240, 170, 175, 180)
 
-# Logos mapping
 COL_LOGOS = [
     "assets/clubs/world cup qatar.jpeg",
     "assets/clubs/world cup russia.jpeg",
@@ -37,9 +35,7 @@ ROW_LOGOS = [
 
 
 class GridView(QWidget):
-    """
-    Grid View بدون أي Animation — عرض + hover + click + logos فقط
-    """
+   
 
     cell_clicked_callback = None
     drop_finished_callback = None
@@ -62,12 +58,10 @@ class GridView(QWidget):
             for path in ROW_LOGOS
         ]
 
-    # ---------- Helpers ----------
     def _metrics(self):
         w, h = self.width(), self.height()
         return w / (COLS + 1), h / (ROWS + 1)
 
-    # ---------- Mouse ----------
     def mouseMoveEvent(self, event):
         cell_w, _ = self._metrics()
         col = int(event.position().x() / cell_w) - 1
@@ -103,7 +97,6 @@ class GridView(QWidget):
         if self.drop_finished_callback:
             self.drop_finished_callback()
 
-    # ---------- Paint ----------
     def paintEvent(self, event):
         p = QPainter(self)
         p.setRenderHint(QPainter.RenderHint.Antialiasing)
@@ -181,7 +174,6 @@ class GridView(QWidget):
 
    
 
-    # ---------- Logo helper ----------
     def _draw_logo(self, p, pm, rect):
         size = min(rect.width(), rect.height()) * 0.85
         scaled = pm.scaled(
