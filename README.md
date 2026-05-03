@@ -1,5 +1,8 @@
 # Football Connect 4 — Ultimate Edition ⚽🏆
 
+<img width="1418" height="1340" alt="image" src="https://github.com/user-attachments/assets/a215b8a7-8303-49dd-ba6d-35aa5bea4a38" />
+
+
 A highly advanced, professionally designed desktop version of the classic Connect 4 game, engineered with **PyQt6**. This "Ultimate Edition" introduces a unique **Grid Trivia (التقاطعات)** mechanic where players must possess deep football knowledge to make their moves.
 
 ## ✨ Features
